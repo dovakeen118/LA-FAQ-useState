@@ -23,5 +23,40 @@
     "id": 5,
     "question": "Why should I learn to program?",
     "answer": "Even non-technical jobs are beginning to require basic programming knowledge. Knowing how to write and think in code is quickly becoming one of the most essential skills in the job market. But the rewards of learning to program go deeper than just getting a better job. Code has innumerable touchpoints in your daily life, and understanding the underlying logic of the programmable world around you means you’ll have a deeper understanding of the everyday magic found in modern life."
+  },
+  {
+    "question": "question",
+    "answer": "some answer",
+    "id": 6
+  },
+  {
+    "question": "question",
+    "answer": "some answer",
+    "id": 7
+  },
+  {
+    "question": "question",
+    "answer": "some answer",
+    "id": 8
+  },
+  {
+    "question": "question",
+    "answer": "some answer",
+    "id": 9
+  },
+  {
+    "question": "question",
+    "answer": "some answer",
+    "id": 10
+  },
+  {
+    "question": "brand new question",
+    "answer": "ansert",
+    "id": 11
+  },
+  {
+    "question": "awesome question",
+    "answer": "cool answer",
+    "id": 12
   }
 ]

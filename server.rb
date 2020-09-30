@@ -27,7 +27,7 @@ end
 
 get "/api/v1/launcher/:id" do
   launcher = read_launchers
-
+# binding.pry
   launcher = launcher.find do |launcher|
     launcher["id"] == params[:id].to_i
   end
@@ -40,12 +40,13 @@ end
 get "/api/v1/launchers" do
   # required for step three
   launchers = read_launchers
-
+# binding.pry
   content_type :json
   json launchers
 end
 
 get "/api/v1/questions" do
+  # binding.pry
   questions = read_questions
 
   content_type :json
@@ -54,8 +55,10 @@ end
 
 post "/api/v1/questions" do
   current_questions = read_questions
-
+  
+  # binding.pry
   question = JSON.parse(request.body.read)
+  
   question["id"] = current_questions.last["id"] + 1
 
   current_questions << question

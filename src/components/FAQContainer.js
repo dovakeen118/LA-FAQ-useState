@@ -1,9 +1,50 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Question from './Question';
+import QuestionForm from './QuestionForm';
 
 const FAQContainer = (props) => {
   const [questions, setQuestions] = useState([])
   const [selectedQuestion, setSelectedQuestion] = useState([])
+
+  // debugger
+
+  useEffect(() => {
+    // debugger
+    fetch('/api/v1/questions')
+    .then((response) => {
+      if (response.ok) {
+        return response;
+      } else {
+        // throw error
+      }
+    })
+    .then((response) => {
+      return response.json()
+    })
+    .then((responseBody) => {
+      setQuestions(responseBody)
+    })
+  }, [])
+
+// debugger
+
+  const addNewQuestion = (newQuestionObject) => {
+    // debugger
+    fetch("/api/v1/questions", {
+      method: "POST",
+      body: JSON.stringify(newQuestionObject)
+    })
+    .then((response) => {
+      return response.json()
+    })
+    .then((responseBody) => {
+      // debugger
+      setQuestions([
+        ...questions,
+        responseBody
+      ])
+    })
+  }
 
   const toggleQuestionSelect = (id) => {
     if(id === selectedQuestion) {
@@ -36,6 +77,10 @@ const FAQContainer = (props) => {
   return(
     <div className='page'>
       <h1>We Are Here To Help</h1>
+      <QuestionForm 
+        addNewQuestionFunction={addNewQuestion}
+      />
+      
       <div className='question-list'>
         {questionListItems}
       </div>
